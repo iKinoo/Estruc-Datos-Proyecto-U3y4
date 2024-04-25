@@ -14,7 +14,7 @@
 	<name>Proyecto Unidad 3 y 4</name>
 	<description>Proyecto de la materia Estructura de Datos para las unidades 3 y 4</description>
 	<properties>
-		<java.version>21</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
