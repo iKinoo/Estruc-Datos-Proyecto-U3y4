@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class Tokenizer {
+
     private String ruta;
     private ArrayList<String> palabras;
 
@@ -14,10 +15,10 @@ public class Tokenizer {
         this.palabras = new ArrayList<>();
     }
 
-    public ArrayList<String> Tokenize(String Ruta) {
+    public ArrayList<String> Tokenize() {
 
         try {
-            FileReader fr = new FileReader(ruta);
+            FileReader fr = new FileReader(this.ruta);
             BufferedReader br = new BufferedReader(fr);
 
             String linea;
@@ -36,7 +37,11 @@ public class Tokenizer {
 
         return palabras;
     }
+    public int getPalabrasSize() {
+        return palabras.size();
+    }
 
+    @SuppressWarnings("unused")
     public void Imprimir() {
         int i = 0;
         System.out.println("Palabras:");
@@ -44,5 +49,13 @@ public class Tokenizer {
             System.out.println(i);
             i++;
         }
+    }
+    @Override
+    public String toString() {
+        ArrayList<String> primeras15Palabras =  new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            primeras15Palabras.add(palabras.get(i));
+        }
+        return "Tokenizer [palabras = " + primeras15Palabras + "..., ruta=" + ruta + "]";
     }
 }
