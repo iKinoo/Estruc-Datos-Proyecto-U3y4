@@ -10,7 +10,7 @@ import org.springframework.ui.Model;;
 @Controller
 public class GeneralController {
 
-    @GetMapping("/")
+    @GetMapping("/proyecto3y4")
     public String landingPage(Model model) {
 
         ArrayList<String> palabras = new ArrayList<>();
