@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.StringTokenizer;
@@ -45,7 +46,7 @@ public class Tokenizer {
         HashSet<String> palabrasSinRepetir = new HashSet<>();
 
         try {
-            FileReader fr = new FileReader(this.ruta);
+            FileReader fr = new FileReader(this.ruta, StandardCharsets.UTF_8);
             BufferedReader br = new BufferedReader(fr);
 
             String linea;
