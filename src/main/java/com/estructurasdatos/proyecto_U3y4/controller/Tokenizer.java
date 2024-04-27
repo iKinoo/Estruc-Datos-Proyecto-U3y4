@@ -1,13 +1,16 @@
-package com.estructurasdatos.proyecto_U3y4;
+package com.estructurasdatos.proyecto_U3y4.controller;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.StringTokenizer;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class Tokenizer {
 
@@ -16,6 +19,9 @@ public class Tokenizer {
 
     public Tokenizer(String ruta) {
         this.ruta = ruta;
+        this.palabras = new ArrayList<>();
+    }
+    public Tokenizer(){
         this.palabras = new ArrayList<>();
     }
 
@@ -42,12 +48,12 @@ public class Tokenizer {
     // return palabras;
     // }
 
-    public ArrayList<String> Tokenize() {
+    public ArrayList<String> tokenize(MultipartFile file) {
         HashSet<String> palabrasSinRepetir = new HashSet<>();
 
         try {
-            FileReader fr = new FileReader(this.ruta, StandardCharsets.UTF_8);
-            BufferedReader br = new BufferedReader(fr);
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(file.getInputStream(), StandardCharsets.UTF_8));
 
             String linea;
             while ((linea = br.readLine()) != null) {
@@ -59,12 +65,12 @@ public class Tokenizer {
 
             br.close();
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
 
         // Convertir el HashSet en un ArrayList
-        palabras = new ArrayList<>(palabrasSinRepetir);
+        ArrayList<String> palabras = new ArrayList<>(palabrasSinRepetir);
         return palabras;
     }
 
