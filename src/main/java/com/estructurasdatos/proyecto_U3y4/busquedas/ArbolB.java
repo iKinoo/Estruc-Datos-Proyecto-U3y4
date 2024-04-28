@@ -118,7 +118,7 @@ class BTree {
         ArbolB arbol = new ArbolB(3,true);
         palabras = tokenizer.Tokenize();
 
-        // Insert words into the BTree
+        
         for (String palabra : palabras) {
             t.insert(palabra);
         }
