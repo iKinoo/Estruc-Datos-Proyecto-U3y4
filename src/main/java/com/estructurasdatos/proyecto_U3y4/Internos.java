@@ -3,6 +3,7 @@ package com.estructurasdatos.proyecto_U3y4;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.text.Collator;
+import java.text.Collator;
 
 public class Internos {
     protected ArrayList<String> palabras;
@@ -170,41 +171,6 @@ public class Internos {
         palabras = new ArrayList<>(lista);
         return lista;
     }
-    // public ArrayList ordenaMerge(ArrayList palabras) {
-    // int n = palabras.size(), i, m;
-    // ArrayList L1 = new ArrayList(), L2 = new ArrayList();
-    // if (n > 1) {
-    // m = n / 2;
-    // for (i = 0; i < m; i++)
-    // L1.add(palabras.get(i));
-    // for (i = m; i < n; i++)
-    // L2.add(palabras.get(i));
-    // palabras = merge(ordenaMerge(L1), ordenaMerge(L2));
-    // }
-    // return palabras;
-    // }
-
-    // public ArrayList merge(ArrayList L1, ArrayList L2) {
-    // ArrayList lista = new ArrayList();
-    // while (!L1.isEmpty() && !L2.isEmpty()) {
-    // if ((Integer) L1.get(0) < (Integer) L2.get(0)) {
-    // lista.add(L1.get(0));
-    // L1.remove(0);
-    // if (L1.isEmpty()) {
-    // lista.addAll(L2);
-    // L2.clear();
-    // }
-    // } else {
-    // lista.add(L2.get(0));
-    // L2.remove(0);
-    // if (L2.isEmpty()) {
-    // lista.addAll(L1);
-    // L1.clear();
-    // }
-    // }
-    // }
-    // return lista;
-    // }
 
     public boolean busquedaBinaria(String palabra) {
         int inicio = 0;
@@ -212,7 +178,7 @@ public class Internos {
 
         while (inicio <= fin) {
             int medio = (inicio + fin) / 2;
-            int comparacion = palabra.compareTo(palabras.get(medio));
+            int comparacion = palabra.compareToIgnoreCase(palabras.get(medio));
 
             if (comparacion == 0) {
                 return true; // La palabra se encontró en el ArrayList

@@ -6,7 +6,7 @@ public class ArbolAVL {
     protected NodoAVL raíz;
 
     public ArbolAVL() {
-        raíz = null;
+        this(null);
     }
 
     public ArbolAVL(Object o) {
@@ -33,28 +33,51 @@ public class ArbolAVL {
     }
 
     public void insertarOrdenado(NodoAVL n, Object o) {
-        if (n == null) {
-            // Si el nodo es null, creamos un nuevo nodo con el objeto 'o'
-            n = new NodoAVL(o, null, null, null); // Aquí debes proporcionar el padre adecuado si es necesario
-            recalcularFE(n);
-        } else {
+        if (n.getDato() != null) {
             if (o.toString().compareTo(n.getDato().toString()) < 0) {
-                if (n.getIzq() == null) {
-                    n.setIzq(new NodoAVL(o, null, null, n));
-                    recalcularFE(n);
-                } else
+                if (n.getIzq() == null)
+                    n.setIzq(new NodoAVL(o));
+                else
                     insertarOrdenado(n.getIzq(), o);
             } else {
                 if (o.toString().compareTo(n.getDato().toString()) > 0) {
-                    if (n.getDer() == null) {
-                        n.setDer(new NodoAVL(o, null, null, n));
-                        recalcularFE(n);
-                    } else
+                    if (n.getDer() == null)
+                        n.setDer(new NodoAVL(o));
+                    else
                         insertarOrdenado(n.getDer(), o);
                 }
             }
+        } else {
+            // Si el dato del nodo es null, aquí puedes decidir cómo manejar este caso
+            // Por ejemplo, podrías insertar el nuevo objeto directamente en este nodo
+            n.setDato(o);
         }
     }
+
+    // public void insertarOrdenado(NodoAVL n, Object o) {
+    // if (n == null) {
+    // // Si el nodo es null, creamos un nuevo nodo con el objeto 'o'
+    // n = new NodoAVL(o, null, null, null); // Aquí debes proporcionar el padre
+    // adecuado si es necesario
+    // recalcularFE(n);
+    // } else {
+    // if (o.toString().compareTo(n.getDato().toString()) < 0) {
+    // if (n.getIzq() == null) {
+    // n.setIzq(new NodoAVL(o, null, null, n));
+    // recalcularFE(n);
+    // } else
+    // insertarOrdenado(n.getIzq(), o);
+    // } else {
+    // if (o.toString().compareTo(n.getDato().toString()) > 0) {
+    // if (n.getDer() == null) {
+    // n.setDer(new NodoAVL(o, null, null, n));
+    // recalcularFE(n);
+    // } else
+    // insertarOrdenado(n.getDer(), o);
+    // }
+    // }
+    // }
+    // }
 
     // public void insertarOrdenado(NodoAVL n, Object o) {
     // if ((int) o < (int) n.getDato()) {
@@ -347,10 +370,11 @@ public class ArbolAVL {
         Tokenizer tokenizer = new Tokenizer("src\\main\\resources\\medline_CDs.txt");
         ArbolAVL arbol = new ArbolAVL();
         palabras = tokenizer.Tokenize();
-
+        // System.out.println(palabras);
         for (String palabra : palabras) {
             arbol.insertar(palabra);
         }
+
         arbol.posOrden();
         // System.out.println("Buscando datos en el árbol");
         // try {
