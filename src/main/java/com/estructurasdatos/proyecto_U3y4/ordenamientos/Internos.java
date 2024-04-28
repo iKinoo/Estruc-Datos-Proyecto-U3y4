@@ -209,11 +209,11 @@ public class Internos {
     public boolean busquedaBinaria(String palabra) {
         int inicio = 0;
         int fin = palabras.size() - 1;
-
+    
         while (inicio <= fin) {
             int medio = (inicio + fin) / 2;
-            int comparacion = palabra.compareTo(palabras.get(medio));
-
+            int comparacion = palabra.compareToIgnoreCase(palabras.get(medio));
+    
             if (comparacion == 0) {
                 return true; // La palabra se encontró en el ArrayList
             } else if (comparacion < 0) {
@@ -222,8 +222,8 @@ public class Internos {
                 inicio = medio + 1; // La palabra está en la mitad superior
             }
         }
-
-        return false; // La palabra no se encontró en el ArrayList
+    
+        return false; // La palabra no se encontró en el ArrayList
     }
 
 }

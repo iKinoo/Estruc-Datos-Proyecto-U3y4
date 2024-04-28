@@ -1,5 +1,6 @@
 package com.estructurasdatos.proyecto_U3y4;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
@@ -48,12 +49,12 @@ public class GeneralController {
         long finish;
 
         // Burbuja
-        internos.SetPalabras((ArrayList<String>)palabras.clone());
-        start = System.currentTimeMillis();
-        internos.burbuja();
-        finish = System.currentTimeMillis();
-        tiempoBurbuja = finish - start;
-        model.addAttribute("tiempoBurbuja", tiempoBurbuja);
+        // internos.SetPalabras((ArrayList<String>)palabras.clone());
+        // start = System.currentTimeMillis();
+        // internos.burbuja();
+        // finish = System.currentTimeMillis();
+        // tiempoBurbuja = finish - start;
+        // model.addAttribute("tiempoBurbuja", tiempoBurbuja);
 
         // Insercion
         internos.SetPalabras((ArrayList<String>)palabras.clone());
@@ -80,7 +81,7 @@ public class GeneralController {
         model.addAttribute("tiempoQuick", tiempoQuick);
         
         // MergeSort
-        // internos.SetPalabras((ArrayList<String>)palabras.clone());
+        internos.SetPalabras((ArrayList<String>)palabras.clone());
         start = System.currentTimeMillis();
         internos.ordenaMerge((ArrayList<String>)palabras.clone());
         finish = System.currentTimeMillis();
@@ -100,8 +101,8 @@ public class GeneralController {
         }
 
         System.out.println("INGRESE UNA PALABRA A BUSCAR");
-        Scanner sc = new Scanner(System.in);
-        String palabra = sc.nextLine();
+        Scanner sc = new Scanner(System.in, StandardCharsets.UTF_8);
+        String palabra = "tamaño:";
         sc.close();
 
         
@@ -117,22 +118,25 @@ public class GeneralController {
         model.addAttribute("tiempoABB", tiempoABB);
 
         //AVL
+        start = System.currentTimeMillis();
         try {
-            start = System.currentTimeMillis();
             arbolAVL.buscar(palabra);
-            finish = System.currentTimeMillis();
-            tiempoAVL = finish - start;
-            model.addAttribute("tiempoAVL", tiempoAVL);
+            
+            
+           
         } catch (ItemNotFoundException e) {
             System.out.println(e.getMessage());
         }
+        finish = System.currentTimeMillis();
+        tiempoAVL = finish - start;
+        model.addAttribute("tiempoAVL", tiempoAVL);
 
                 
         // System.out.println("Arreglo ordenado");
         // internos.Imprimir();
-        System.out.println("El tiempo total es de " + tiempoMerge);
+        // System.out.println("El tiempo total es de " + tiempoMerge);
 
-        if (internos.busquedaBinaria(palabra)) {
+        if (internos.busquedaBinaria("óvulo")) {
             System.out.println("Se encontro la palabra");
         } else {
             System.out.println("No se encontro la palabra");
