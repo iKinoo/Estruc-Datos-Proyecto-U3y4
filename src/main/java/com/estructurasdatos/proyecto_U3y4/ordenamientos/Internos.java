@@ -1,8 +1,8 @@
-package com.estructurasdatos.proyecto_U3y4.ordenamientos;
+package com.estructurasdatos.proyecto_U3y4;
 
 import java.util.ArrayList;
 import java.util.Stack;
-// import java.text.Collator;
+import java.text.Collator;
 
 public class Internos {
     protected ArrayList<String> palabras;

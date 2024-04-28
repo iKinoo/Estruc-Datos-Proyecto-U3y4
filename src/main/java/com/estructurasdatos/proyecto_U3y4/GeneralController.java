@@ -39,7 +39,7 @@ public class GeneralController {
         // internos.Imprimir();
         System.out.println("El tiempo total es de " + timeElapsed);
 
-        if (internos.busquedaBinaria("Lunares")) {
+        if (internos.busquedaBinaria("tamaño")) {
             System.out.println("Se encontro la palabra");
         } else {
             System.out.println("No se encontro la palabra");
