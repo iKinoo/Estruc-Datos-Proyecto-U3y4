@@ -1,6 +1,9 @@
-package com.estructurasdatos.proyecto_U3y4;
+package com.estructurasdatos.proyecto_U3y4.busquedas;
 
 import java.util.ArrayList;
+
+import com.estructurasdatos.proyecto_U3y4.Tokenizer;
+import com.estructurasdatos.proyecto_U3y4.excepciones.ItemNotFoundException;
 
 public class ArbolAVL {
     protected NodoAVL raíz;

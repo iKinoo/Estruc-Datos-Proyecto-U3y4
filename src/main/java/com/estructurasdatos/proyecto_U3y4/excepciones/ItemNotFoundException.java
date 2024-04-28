@@ -1,4 +1,4 @@
-package com.estructurasdatos.proyecto_U3y4;
+package com.estructurasdatos.proyecto_U3y4.excepciones;
 
 public class ItemNotFoundException extends RuntimeException {
 

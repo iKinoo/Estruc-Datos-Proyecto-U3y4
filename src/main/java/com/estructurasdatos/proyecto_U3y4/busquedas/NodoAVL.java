@@ -1,4 +1,4 @@
-package com.estructurasdatos.proyecto_U3y4;
+package com.estructurasdatos.proyecto_U3y4.busquedas;
 
 public class NodoAVL {
     protected int fe;
