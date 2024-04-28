@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 class ArbolB {
-    int t;  // Grado mínimo
-    List<String> keys;  // Claves, ahora son Strings
-    List<ArbolB> children; // Hijos
-    boolean leaf;  // True si es hoja
+    int t;  
+    List<String> keys;  
+    List<ArbolB> children; 
+    boolean leaf;  
 
     public ArbolB(int t, boolean leaf) {
         this.t = t;
