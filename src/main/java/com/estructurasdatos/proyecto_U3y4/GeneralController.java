@@ -48,12 +48,12 @@ public class GeneralController {
         long finish;
 
         // Burbuja
-        // internos.SetPalabras((ArrayList<String>)palabras.clone());
-        // start = System.currentTimeMillis();
-        // internos.burbuja();
-        // finish = System.currentTimeMillis();
-        // tiempoBurbuja = finish - start;
-        // model.addAttribute("tiempoBurbuja", tiempoBurbuja);
+        internos.SetPalabras((ArrayList<String>)palabras.clone());
+        start = System.currentTimeMillis();
+        internos.burbuja();
+        finish = System.currentTimeMillis();
+        tiempoBurbuja = finish - start;
+        model.addAttribute("tiempoBurbuja", tiempoBurbuja);
 
         // Insercion
         internos.SetPalabras((ArrayList<String>)palabras.clone());
