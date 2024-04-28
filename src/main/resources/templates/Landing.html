@@ -14,8 +14,52 @@
     <h1 class="text-center mt-5 mb-5 text-light">Proyecto Unidad 3 y 4</h1>
 </header>
 
-<body class="bg-secondary">
+<body class="container bg-secondary">
     <div class="bg-light rounded-3">
+        <div class ="row justify-content-center">
+            <div class="col-8 " >
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Método</th>
+                        <th scope="col">Tiempo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Burbuja</th>
+                        <td th:text="${tiempoBurbuja}"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Inserción</th>
+                        <td th:text="${tiempoInsercion}"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Shellsort</th>
+                        <td colspan="2" th:text="${tiempoShell}"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Quicksort</th>
+                        <td colspan="2" th:text="${tiempoQuick}"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Merge</th>
+                        <td colspan="2" th:text="${tiempoMerge}"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Arboles ABB</th>
+                        <td colspan="2" th:text="${tiempoABB}"></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Arboles AVL</th>
+                        <td colspan="2" th:text="${tiempoAVL}"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+            </div>
+        </div>
+        
         <div class="row">
             <p class=col-12 th:text="${#strings.listJoin(palabras, ' ')}"></p>
         </div>

@@ -124,21 +124,21 @@ public class ArbolABB {
             return n.getDer();
     }
 
-    public static void main(String[] args) {
-        ArrayList<String> palabras = new ArrayList<>();
-        Tokenizer tokenizer = new Tokenizer("src\\main\\resources\\medline_CDs.txt");
-        ArbolABB arbol = new ArbolABB();
-        palabras = tokenizer.Tokenize();
+    // public static void main(String[] args) {
+    //     ArrayList<String> palabras = new ArrayList<>();
+    //     Tokenizer tokenizer = new Tokenizer("src\\main\\resources\\medline_CDs.txt");
+    //     ArbolABB arbol = new ArbolABB();
+    //     palabras = tokenizer.Tokenize();
 
-        for (String palabra : palabras) {
-            arbol.insertar(palabra);
-        }
+    //     for (String palabra : palabras) {
+    //         arbol.insertar(palabra);
+    //     }
 
-        System.out.println("Buscando datos en el árbol");
-        try {
-            arbol.buscar("óvulo");
-        } catch (ItemNotFoundException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
-    }
+    //     System.out.println("Buscando datos en el árbol");
+    //     try {
+    //         arbol.buscar("óvulo");
+    //     } catch (ItemNotFoundException e) {
+    //         System.out.println("Error: " + e.getMessage());
+    //     }
+    // }
 }
