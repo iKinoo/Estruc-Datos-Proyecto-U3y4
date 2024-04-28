@@ -18,11 +18,16 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.jdbm/jdbm -->
+		<dependency>
+			<groupId>org.apache.jdbm</groupId>
+			<artifactId>jdbm</artifactId>
+			<version>3.0-alpha5</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
